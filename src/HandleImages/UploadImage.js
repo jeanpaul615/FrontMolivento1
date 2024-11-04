@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { API_BASE_URL } from "../containers/Api";
 import Swal from 'sweetalert2';
 
 function UploadImage({ nombreMaterialProp }) {
@@ -32,7 +33,7 @@ function UploadImage({ nombreMaterialProp }) {
     formData.append('nombreMaterial', nombreMaterial);
 
     try {
-      const response = await axios.post('http://3.129.48.12/upload', formData, {
+      const response = await axios.post(`${API_BASE_URL}/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

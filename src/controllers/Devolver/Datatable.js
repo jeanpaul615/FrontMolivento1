@@ -1,8 +1,9 @@
 import axios from "axios";
+import { API_BASE_URL } from "../../containers/Api"; 
 export const fetchDevolver = async () => {
   try {
     const response = await axios.get(
-      "http://3.129.48.12/devolver/get-devolver"
+      `${API_BASE_URL}/devolver/get-devolver`
     );
     return response.data; // Retorna los datos recibidos desde la API
   } catch (error) {
@@ -14,7 +15,7 @@ export const fetchDevolver = async () => {
 export const AddDevolucion = async (Nombre_material, Cantidad) => {
   try {
     const responseStockSistema = await axios.post(
-      "http://3.129.48.12/stock/update-stockbytecnico",
+      `${API_BASE_URL}/stock/update-stockbytecnico`,
       {
         Nombre_material,
         Cantidad,
@@ -33,7 +34,7 @@ export const AddDevolucion = async (Nombre_material, Cantidad) => {
 export const AddDatatable = async (Nombre_material, Cantidad, Estado) => {
   try {
     const response = await axios.post(
-      "http://3.129.48.12/devolver/add-devolver",
+      `${API_BASE_URL}/devolver/add-devolver`,
       {
         Nombre_material,
         Cantidad,

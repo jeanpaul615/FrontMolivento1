@@ -1,9 +1,10 @@
 import axios from "axios";
+import { API_BASE_URL } from "../../containers/Api"; 
 
 // Función encargada de traer los stocks para la datatable del dashboard
 export const fetchContrato = async () => {
   try {
-    const response = await axios.get('http://3.129.48.12/contrato/get-contratos');
+    const response = await axios.get(`${API_BASE_URL}/contrato/get-contratos`);
     return response.data; // Retorna los datos recibidos desde la API
   } catch (error) {
     console.error('Error al obtener los stocks:', error);

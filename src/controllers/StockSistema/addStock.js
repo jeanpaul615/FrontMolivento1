@@ -1,9 +1,10 @@
 // Función encargada de agregar un nuevo stock
 import Swal from 'sweetalert2'
+import { API_BASE_URL } from "../../containers/Api"; 
 export const addStock = async (stockData) => {
 
   try {
-    const response = await fetch('http://3.129.48.12/stock/add-stocksistema', {
+    const response = await fetch(`${API_BASE_URL}/stock/add-stocksistema`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

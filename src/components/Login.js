@@ -4,6 +4,7 @@ import axios from "axios";
 import legon_banner from "../assets/legon_banner.png";
 import leon_legon from "../assets/leon_legon.png";
 import { ApisAdmin } from "../containers/isAdmin";
+import { API_BASE_URL } from "../containers/Api"; 
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -26,7 +27,7 @@ export default function Login() {
     };
 
     try {
-      const response = await axios.post("http://3.129.48.12/login", data, {
+      const response = await axios.post(`${API_BASE_URL}/login`, data, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -54,7 +55,7 @@ export default function Login() {
 
   return (
     <div>
-    <h1 class="text-center justify-center pb-10 pt-5 flex text-3xl font-extrabold bg-black text-gray-900 md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-yellow-400">Molivento</span></h1>
+    <h1 class="text-center justify-center pb-10 pt-5 flex text-3xl font-extrabold bg-black text-gray-900 md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-blue-600 from-yellow-400">MOLIVENTO</span></h1>
     <div className="min-h-screen flex flex-col lg:flex-row items-center justify-center bg-gray-500 py-12 px-4 sm:px-6 lg:px-8">
       <div className="lg:w-3/2 lg:pr-0.5">
         <div className="p-6 bg-yellow-500 rounded-lg shadow-md hidden md:flex flex-col items-center">

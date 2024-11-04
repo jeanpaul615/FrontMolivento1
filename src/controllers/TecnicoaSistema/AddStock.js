@@ -1,10 +1,11 @@
 import axios from "axios";
+import { API_BASE_URL } from "../../containers/Api";
 import qs from 'qs';
 import swal from 'sweetalert2'; // Importa SweetAlert2
 
 export const getMaterials = async (Nombre_tecnico) => {
   try {
-    const response = await fetch('http://3.129.48.12/stocktechnique/materials-by-tecnico', {
+    const response = await fetch(`${API_BASE_URL}/stocktechnique/materials-by-tecnico`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -23,7 +24,7 @@ export const getMaterials = async (Nombre_tecnico) => {
 // Función para obtener la lista de técnicos
 export const getTechnicians = async () => {
   try {
-    const response = await fetch('http://3.129.48.12/stocktechnique/all-tecnicos');
+    const response = await fetch(`${API_BASE_URL}/stocktechnique/all-tecnicos`);
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.statusText}`);
     }
@@ -38,7 +39,7 @@ export const getTechnicians = async () => {
 // Función para obtener el stock por material en formato application/json
 export const getStockByMaterial = async (Nombre_material, Nombre_tecnico) => {
   try {
-    const response = await fetch('http://3.129.48.12/stocktechnique/stock-by-name', {
+    const response = await fetch(`${API_BASE_URL}/stocktechnique/stock-by-name`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -69,7 +70,7 @@ export const SaveStockTecnico = async (Nombre_material, Cantidad, Nombre_tecnico
     };
 
     // Guardar en stocktecnico usando x-www-form-urlencoded
-    const responseStockTecnico = await axios.put('http://3.129.48.12/stocktechnique/update-cantidad-stocktechnique', qs.stringify(formDataStockTecnico), {
+    const responseStockTecnico = await axios.put(`${API_BASE_URL}/stocktechnique/update-cantidad-stocktechnique`, qs.stringify(formDataStockTecnico), {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
@@ -82,7 +83,7 @@ export const SaveStockTecnico = async (Nombre_material, Cantidad, Nombre_tecnico
     };
 
     // Actualizar stocksistema usando x-www-form-urlencoded
-    const responseStockSistema = await axios.post('http://3.129.48.12/stock/update-stockbydevolucion', qs.stringify(formDataStockSistema), {
+    const responseStockSistema = await axios.post(`${API_BASE_URL}/stock/update-stockbydevolucion`, qs.stringify(formDataStockSistema), {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }

@@ -1,9 +1,9 @@
-
+import { API_BASE_URL } from "../../containers/Api"; 
 import axios from "axios";
 
 export const fetchTechniques = async () => {
   try {
-    const response = await axios.get('http://3.129.48.12/stocktechnique/get-stock');
+    const response = await axios.get(`${API_BASE_URL}/stocktechnique/get-stock`);
     return response.data; // Retorna los datos recibidos desde la API
   } catch (error) {
     console.error('Error al obtener los datos del stock tecnicos:', error);
@@ -13,7 +13,7 @@ export const fetchTechniques = async () => {
   
   export const deleteTechnique = async (id) => {
     try {
-      const response = await fetch(`http://3.129.48.12/stocktechnique/delete-stocktechnique/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/stocktechnique/delete-stocktechnique/${id}`, {
         method: 'DELETE'
       });
       if (!response.ok) {
@@ -33,7 +33,7 @@ export const fetchTechniques = async () => {
     }
   
     try {
-      const response = await fetch(`http://3.129.48.12/stocktechnique/update-stocktechnique/${id}`, {
+      const response = await fetch(`${API_BASE_URL}/stocktechnique/update-stocktechnique/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

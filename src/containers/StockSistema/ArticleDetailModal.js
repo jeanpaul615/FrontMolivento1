@@ -1,10 +1,11 @@
 import React from 'react';
 import UploadImage from '../../HandleImages/UploadImage';
+import { API_BASE_URL } from '../Api';
 
 function ArticleDetailModal({ isOpen, onClose, article }) {
   if (!isOpen) return null;
 
-  const serverBaseUrl = '//3.129.48.12/'; // URL base del servidor con protocolo relativo
+  const serverBaseUrl = `${API_BASE_URL}`; // URL base del servidor con protocolo relativo
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">

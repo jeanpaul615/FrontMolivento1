@@ -1,9 +1,9 @@
 import Swal from 'sweetalert2';
-
+import { API_BASE_URL } from "../../containers/Api"; 
 // Función encargada de agregar un nuevo stock
 export const addStock = async (stockData) => {
   try {
-    const response = await fetch('http://3.129.48.12/add-stocksistema', {
+    const response = await fetch(`${API_BASE_URL}/add-stocksistema`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -48,7 +48,7 @@ export const addStock = async (stockData) => {
 // Función para obtener la lista de técnicos
 export const getTechnicians = async () => {
   try {
-    const response = await fetch('http://3.129.48.12/tecnico/tecnicos');
+    const response = await fetch(`${API_BASE_URL}/tecnico/tecnicos`);
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.statusText}`);
     }
@@ -63,7 +63,7 @@ export const getTechnicians = async () => {
 // Función para obtener la lista de materiales
 export const getMaterials = async () => {
   try {
-    const response = await fetch('http://3.129.48.12/stock/get-stocksistema');
+    const response = await fetch(`${API_BASE_URL}/stock/get-stocksistema`);
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.statusText}`);
     }
@@ -79,7 +79,7 @@ export const getMaterials = async () => {
 // Función para obtener el stock por material en formato application/json
 export const getStockByMaterial = async (Nombre_material) => {
   try {
-    const response = await fetch('http://3.129.48.12/stock/byname', {
+    const response = await fetch(`${API_BASE_URL}/stock/byname`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -1,10 +1,11 @@
 import axios from 'axios';
+import { API_BASE_URL } from "../../containers/Api"; 
 import qs from 'qs';
 //Funcion que actualiza el stock del sistema
 export const updateStockSistema = async (formData) => {
   try {
     const requestData = qs.stringify(formData);
-    const response = await axios.put('http://3.129.48.12/stock/update-stocksistema', requestData, {
+    const response = await axios.put(`${API_BASE_URL}/stock/update-stocksistema`, requestData, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
@@ -21,7 +22,7 @@ export const updateStockSistema = async (formData) => {
 export const updateStockTechnique = async (formData) => {
   try {
     const requestData = qs.stringify(formData);
-    const response = await axios.put('http://3.129.48.12/stocktechnique/update-stocktechnique', requestData, {
+    const response = await axios.put(`${API_BASE_URL}/stocktechnique/update-stocktechnique`, requestData, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
@@ -38,7 +39,7 @@ export const updateStockTechnique = async (formData) => {
 export const updateTecnico = async (formData) => {
   try {
     const requestData = qs.stringify(formData);
-    const response = await axios.put('http://3.129.48.12/tecnico/update-tecnico', requestData, {
+    const response = await axios.put(`${API_BASE_URL}/tecnico/update-tecnico`, requestData, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       }

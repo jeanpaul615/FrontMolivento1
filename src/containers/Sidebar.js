@@ -47,7 +47,7 @@ function Sidebar() {
         <div className="flex-1 flex justify-end pr-5">
           <button
             type="button"
-            className="flex p-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-white focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 bg-white"
+            className="flex p-2 ms-3 text-sm rounded-lg sm:hidden  focus:outline-none focus:ring-2 text-gray-400 hover:bg-gray-700 focus:ring-gray-600 bg-white"
             onClick={toggleMenu}
           >
             <span className="sr-only">Open sidebar</span>
@@ -227,7 +227,7 @@ function Sidebar() {
             <li>
               <a
                 href="/factura"
-                className="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-700 group"
+                className="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group"
               >
                 <svg 
                 className="h-4 w-5"

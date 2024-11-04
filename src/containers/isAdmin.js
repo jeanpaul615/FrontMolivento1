@@ -1,9 +1,9 @@
 // isAdmin.js
 import axios from "axios";
-
+import { API_BASE_URL } from "./Api"; 
 export const ApisAdmin = async (username) => {
   try {
-    const response = await axios.post('http://3.129.48.12/check-admin', {
+    const response = await axios.post(`${API_BASE_URL}/check-admin`, {
       username: username
     }, {
       headers: {

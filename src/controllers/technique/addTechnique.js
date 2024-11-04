@@ -1,10 +1,11 @@
 import axios from 'axios';
 import qs from 'qs';
+import { API_BASE_URL } from "../../containers/Api"; 
 
 export const addTechnician = async (technicianData) => {
   try {
     const response = await axios.post(
-      'http://3.129.48.12/tecnico/add-tecnico',
+      `${API_BASE_URL}/tecnico/add-tecnico`,
       qs.stringify(technicianData), // Convertir a x-www-form-urlencoded
       {
         headers: {

@@ -1,1 +1,1 @@
-export const API_BASE_URL = "https://backmolivento1.onrender.com"; // URL universal para todas las APIs.
+export const API_BASE_URL = "http://34.198.106.72:8000"; // URL universal para todas las APIs.
